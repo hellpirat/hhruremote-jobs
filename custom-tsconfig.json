@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "noFallthroughCasesInSwitch": true,
+    "baseUrl": "src",
+    "paths": {
+      "@src/*": ["./*"],
+      "@modules/*": ["./modules/*"],
+      "@lib/*": ["./lib/*"],
+      "@ui/*": ["./ui/*"]
+    }
+  }
+}
