@@ -37,7 +37,13 @@ export const VacanciesPage = () => {
   return (
     <>
       {data?.map((page) => (
-        <List key={page.page} dataSource={page.items} renderItem={(item) => <VacancyItem vacancy={item} />} />
+        <List
+          key={page.page}
+          size="large"
+          itemLayout="vertical"
+          dataSource={page.items}
+          renderItem={(item) => <VacancyItem vacancy={item} />}
+        />
       ))}
       <div className={styles.loadMoreWrapper}>
         <Button type="primary" disabled={Boolean(isFetchingMore) || !canFetchMore} onClick={handleLoadMore}>
