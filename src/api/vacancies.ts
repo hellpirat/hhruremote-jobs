@@ -1,5 +1,3 @@
-import ky from 'ky'
-
 import { request } from '@lib/request'
 
 import { VacancyDTO } from '@src/@types/dto'
@@ -12,4 +10,20 @@ export type VacanciesResponseType = {
   page: number
 }
 
-export const fetch = async (): Promise<VacanciesResponseType> => request.get('vacancies').json()
+export type VacanciesRequestType = {
+  page?: number
+}
+
+const IT_SPECIALIZATION = '1.221'
+const REMOTE_TYPE = 'remote'
+
+export const fetch = async ({ page = 0 }: VacanciesRequestType): Promise<VacanciesResponseType> =>
+  request
+    .get('vacancies', {
+      searchParams: {
+        schedule: REMOTE_TYPE,
+        specialization: IT_SPECIALIZATION,
+        page,
+      },
+    })
+    .json()

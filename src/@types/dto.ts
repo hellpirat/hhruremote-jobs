@@ -12,11 +12,11 @@ export interface EmployerDTO {
   name: string
   url: string
   alternate_url: string
-  logo_urls: {
+  logo_urls: Nullable<{
     '90': string
     '240': string
     original: string
-  }
+  }>
   vacancies_url: string
   trusted: boolean
 }
