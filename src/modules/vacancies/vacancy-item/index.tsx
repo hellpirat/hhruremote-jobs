@@ -16,7 +16,11 @@ export const VacancyItem: React.FC<Props> = ({ vacancy }) => {
       <List.Item>
         <List.Item.Meta
           avatar={<Avatar src={avatarUrl} />}
-          title={<a>{vacancy.name}</a>}
+          title={
+            <a href={vacancy.alternate_url} target="_blank">
+              {vacancy.name}
+            </a>
+          }
           description={vacancy.employer.name}
         />
       </List.Item>
