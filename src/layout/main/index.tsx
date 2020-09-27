@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { Layout, Menu, Breadcrumb } from 'antd'
+import { Layout } from 'antd'
 
-const { Header, Content, Footer } = Layout
+const { Content } = Layout
 
 interface Props {}
 
