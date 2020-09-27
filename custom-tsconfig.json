@@ -4,6 +4,7 @@
     "baseUrl": "src",
     "paths": {
       "@src/*": ["./*"],
+      "@api/*": ["./api/*"],
       "@modules/*": ["./modules/*"],
       "@lib/*": ["./lib/*"],
       "@ui/*": ["./ui/*"]
