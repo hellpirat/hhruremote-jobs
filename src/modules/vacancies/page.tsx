@@ -1,31 +1,13 @@
 import React from 'react'
 
 import { useQuery } from 'react-query'
-import { List } from 'antd'
+import { Card, List, Skeleton } from 'antd'
 
 import * as vacanciesApi from '@api/vacancies'
 
 import { MainLayout } from '../../layout/main'
 import { VacancyItem } from './vacancy-item'
-
-// const data = [
-//   {
-//     title: 'Senior IOS⁢ Developer',
-//     logo: 'https://hhcdn.ru/employer-logo/3388810.png',
-//   },
-//   {
-//     title: 'Middle to Senior Developer Unity 3D C# / Программист-разработчик',
-//     logo: 'https://hhcdn.ru/employer-logo/2177418.png',
-//   },
-//   {
-//     title: 'Ant Design Title 3',
-//     logo: 'https://hhcdn.ru/employer-logo/3388810.png',
-//   },
-//   {
-//     title: 'Ant Design Title 4',
-//     logo: 'https://hhcdn.ru/employer-logo/3388810.png',
-//   },
-// ]
+import { VacancyLoader } from './loader'
 
 export const VacanciesPage = () => {
   const { isLoading, error, data } = useQuery('vacancies', vacanciesApi.fetch)
@@ -34,16 +16,12 @@ export const VacanciesPage = () => {
   console.log(data)
 
   if (isLoading) {
-    return <div>loading...</div>
+    return <VacancyLoader count={5} />
   }
 
   if (error) {
     return <div>error</div>
   }
 
-  return (
-    <MainLayout>
-      <List itemLayout="horizontal" dataSource={data?.items} renderItem={(item) => <VacancyItem vacancy={item} />} />
-    </MainLayout>
-  )
+  return <List itemLayout="horizontal" dataSource={data?.items} renderItem={(item) => <VacancyItem vacancy={item} />} />
 }
