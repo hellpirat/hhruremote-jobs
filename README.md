@@ -1,8 +1,8 @@
 # TODO
 
-[ ]  Add virtualization with infinity scroller
+- [ ]  Add virtualization with infinity scroller
 
-[ ]  Add filters
+- [ ]  Add filters
 
 ## API
 
