@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { List, Avatar, Card } from 'antd'
+import { Avatar, Button, Card, List } from 'antd'
 import { VacancyDTO } from '@src/@types/dto'
 
 import { SalaryLabel } from '../salary-label'
@@ -12,10 +12,16 @@ interface Props {
 
 export const VacancyItem: React.FC<Props> = ({ vacancy }) => {
   const avatarUrl = vacancy.employer.logo_urls?.[240] || emptyAvatar
-  console.log(vacancy)
   return (
     <Card>
-      <List.Item extra={<SalaryLabel salary={vacancy.salary} />}>
+      <List.Item
+        actions={[
+          <Button href={vacancy.apply_alternate_url} target="_blank" type="primary">
+            Откликнуться на hh.ru
+          </Button>,
+        ]}
+        extra={<SalaryLabel salary={vacancy.salary} />}
+      >
         <List.Item.Meta
           avatar={<Avatar src={avatarUrl} />}
           title={

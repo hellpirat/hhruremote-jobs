@@ -39,7 +39,6 @@ export const VacanciesPage = () => {
       {data?.map((page) => (
         <List
           key={page.page}
-          size="large"
           itemLayout="vertical"
           dataSource={page.items}
           renderItem={(item) => <VacancyItem vacancy={item} />}
