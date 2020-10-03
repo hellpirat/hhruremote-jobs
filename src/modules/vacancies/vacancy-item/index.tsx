@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Avatar, Button, Card, Descriptions, List, Space } from 'antd'
+import { Avatar, Button, Card, Descriptions, List } from 'antd'
 
 import { VacancyDTO } from '@src/@types/dto'
 import { useToggle } from '@lib/hooks'
@@ -30,7 +30,7 @@ export const VacancyItem: React.FC<Props> = ({ vacancy }) => {
         <List.Item.Meta
           avatar={<Avatar src={avatarUrl} />}
           title={
-            <a href={vacancy.alternate_url} target="_blank">
+            <a href={vacancy.alternate_url} rel="noopener noreferrer" target="_blank">
               {vacancy.name}
             </a>
           }
