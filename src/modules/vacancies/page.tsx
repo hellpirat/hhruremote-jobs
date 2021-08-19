@@ -18,7 +18,6 @@ export const VacanciesPage = () => {
     },
     {
       getFetchMore: (lastGroup) => {
-        // @ts-ignore
         return lastGroup.page
       },
     }
